@@ -1,0 +1,31 @@
+---
+driver:
+  name: azurerm
+
+driver_config:
+  location: "Central US"
+  machine_size: "Standard_DS2_v2"
+
+provisioner:
+  name: chef_zero
+  sudo: true
+
+transport:
+  ssh_key: ~/.ssh/id_rsa
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: centos-75
+    driver:
+      image_urn: OpenLogic:CentOS:7.5:latest
+
+suites:
+  - name: default
+    run_list:
+      - recipe[maintenance_window::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
