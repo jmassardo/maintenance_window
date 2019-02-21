@@ -29,12 +29,12 @@ See [USAGE](#usage).
 
 The following attributes control how and when a maintenance window is created.
 
-- `# default['maint_window']['interval']` - Options: Daily, Weekly, Monthly, Offset
-- `# default['maint_window']['start_time']` - Format: HH:MM, leading zero required, 24hr format
-- `# default['maint_window']['duration']` - Duration in hours
-- `# default['maint_window']['week_day']` - # Day of week by name
-- `# default['maint_window']['day']` - Options: 1-31 - Integer of day of the month
-- `# default['maint_window']['offset']` - Options: 1-31 - Integer of days after Patch Tuesday
+- `default['maint_window']['interval']` - Options: Daily, Weekly, Monthly, Offset
+- `default['maint_window']['start_time']` - Format: HH:MM, leading zero required, 24hr format
+- `default['maint_window']['duration']` - Duration in hours
+- `default['maint_window']['week_day']` - # Day of week by name
+- `default['maint_window']['day']` - Options: 1-31 - Integer of day of the month
+- `default['maint_window']['offset']` - Options: 1-31 - Integer of days after Patch Tuesday
 
 ## Window Types
 
