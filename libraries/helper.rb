@@ -1,3 +1,21 @@
+#
+# Author:: James Massardo (<james@dxrf.com>)
+# Copyright:: Copyright (c) James Massardo
+# License:: Apache License, Version 2.0
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
 require 'date'
 
 module MaintenanceWindow
@@ -13,7 +31,7 @@ module MaintenanceWindow
       elsif interval == 'offset'
         offset_window
       else
-        return false
+        false
       end
     end
 
@@ -45,7 +63,7 @@ module MaintenanceWindow
         time_check if current_date.saturday?
       else
         # Something's not right so bailing out
-        return false
+        false
       end
     end
 
@@ -58,7 +76,7 @@ module MaintenanceWindow
       if current_date.day == day.to_i
         time_check
       else
-        return false
+        false
       end
     end
 
@@ -75,7 +93,7 @@ module MaintenanceWindow
       if mw_date.day == current_date.day
         time_check
       else
-        return false
+        false
       end
     end
 
@@ -87,9 +105,9 @@ module MaintenanceWindow
       mw_end = mw_start + Rational(duration, 24)
 
       if mw_start < current_date && current_date < mw_end
-        return true
+        true
       else
-        return false
+        false
       end
     end
 
